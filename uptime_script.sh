@@ -7,3 +7,12 @@ while read url; do
         echo "$url is DOWN"
     fi
 done < urls.txt
+#!/bin/bash
+
+URL="https://example.com"
+
+if curl --output /dev/null --silent --head --fail "$URL"; then
+  echo "Website is UP."
+else
+  echo "Website is DOWN."
+fi
